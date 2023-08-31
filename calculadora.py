@@ -3,19 +3,21 @@ import random
 
 # Definindo as matrizes com os novos nomes
 deslocamento = [
-    [10, 20, 30],
-    [40, 50, 60],
-    [70, 80, 90]
+    [41.3, 21, 12.8],
+    [31, 25.6, 14],
+    [32.5, 28.4, 11]
 ]
 
 velocidade = [
-    [1, 2, 3],
-    [4, 5, 6],
-    [7, 8, 9]
+    [31, 41, 32.5],
+    [27, 44, 33],
+    [34, 48, 20.6]
 ]
 
 # Criando uma matriz tempo como uma matriz 3x3
-tempo = [[0, 0, 0], [0, 0, 0], [0, 0, 0]]
+tempo = [[0, 0, 0],
+         [0, 0, 0],
+         [0, 0, 0]]
 
 # Realizando a divisão dos elementos e armazenando na matriz tempo
 for i in range(3):
@@ -40,8 +42,9 @@ def calcular_custos(tempo, sequencia):
         custos_minimos.append(menor_valor)
         custos_maximos.append(maior_valor)
         
-        print(f"O menor valor encontrado na coluna foi: {menor_valor}")
-        print(f"O maior valor encontrado na coluna foi: {maior_valor}")
+        for i in range(0, 3):
+            print(f"O menor valor encontrado na coluna {i+1} foi: {menor_valor}")
+            print(f"O maior valor encontrado na coluna {i+1} foi: {maior_valor}")
     
     custo_total_minimo = sum(custos_minimos)
     custo_total_maximo = sum(custos_maximos)
@@ -54,7 +57,7 @@ print(sequencia)
 
 # Cálculo dos custos mínimo e máximo
 custos_minimos, custos_maximos, custo_total_minimo, custo_total_maximo = calcular_custos(tempo, sequencia)
-print(f"Menores custos do caminho: {custos_minimos}")
-print(f"Custo total mínimo do melhor caminho: {custo_total_minimo}")
-print(f"Maiores custos do caminho: {custos_maximos}")
-print(f"Custo total máximo do melhor caminho: {custo_total_maximo}")
+print(f"Menores custos do caminho: {custos_minimos*60}")
+print(f"Custo total mínimo do melhor caminho: {custo_total_minimo*60}")
+print(f"Maiores custos do caminho: {custos_maximos*60}")
+print(f"Custo total máximo do melhor caminho: {custo_total_maximo*60}")
